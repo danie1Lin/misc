@@ -1,2 +1,2 @@
 # Misc
-Just some expirment code
+Just some experimental code
