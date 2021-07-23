@@ -1,0 +1,3 @@
+config:
+  aws:profile: YOUR AWS PORFILE NAME 
+  aws:region: YOUR REGION
