@@ -1,4 +1,3 @@
-examples=example*
 
 url: pulumi.up 
 	pulumi stack output bucket_endpoint
@@ -19,7 +18,8 @@ init.dotenv:
 		direnv allow . && \
 		cd . || \
 		exit 0
-
+examples=example*
+.PHONY: $(examples)
 $(examples):
 	@export EXAMPLE_FILE=$(subst example.,,$@) && \
 		test ! -f $${EXAMPLE_FILE} && \
@@ -28,3 +28,10 @@ $(examples):
 		exit 0
 
 .PHONY: url pulumi.% init init.% $(examples) 
+
+## help: Show this help info.
+.PHONY: help
+help: Makefile
+	@echo -e "\nUsage: make <TARGETS> <OPTIONS> ...\n\nTargets:"
+	@sed -n 's/^##//p' $< | column -t -s ':' | sed -e 's/^/ /'
+	@echo "$$USAGE_OPTIONS"
