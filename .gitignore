@@ -1,0 +1,3 @@
+**/target
+**/vendor
+**/gorm/mysql_master_data

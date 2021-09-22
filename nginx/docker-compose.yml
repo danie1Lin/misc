@@ -1,0 +1,7 @@
+services:
+  nginx:
+    image: nginx:1.16
+    volumes:
+      - ./conf.d:/etc/nginx/conf.d
+    ports:
+      - "4567:80"
